@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekphreak's Counter Apologetics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        /* Custom Font Import */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+        :root {
+            --tardis-blue: #003b6f;
+            --off-white: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--off-white);
+            color: #1f2937;
+        }
+
+        .tardis-bg {
+            background-color: var(--tardis-blue);
+        }
+
+        .tardis-text {
+            color: var(--tardis-blue);
+        }
+
+        /* Custom scrollbar for text areas */
+        .custom-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #e5e7eb;
+            border-radius: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #9ca3af;
+            border-radius: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="tardis-bg text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-bookmark text-2xl"></i>
+                    <h1 class="text-xl md:text-2xl font-bold tracking-tight">Tekphreak's Counter Apologetics</h1>
+                </div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                </div>
+                <input type="text" id="searchInput" 
+                    class="block w-full pl-10 pr-3 py-3 border-none rounded-lg leading-5 bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-inner" 
+                    placeholder="Search for a claim (e.g., creation, morality)...">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl mx-auto w-full px-4 py-6">
+        <div id="results-count" class="text-sm text-gray-500 mb-4 text-right"></div>
+        
+        <!-- List Container -->
+        <div id="apologeticsList" class="space-y-6">
+            <!-- Items will be injected here via JS -->
+        </div>
+
+        <!-- No Results Message -->
+        <div id="noResults" class="hidden text-center py-12">
+            <i class="fa-solid fa-wind text-4xl text-gray-300 mb-3"></i>
+            <p class="text-gray-500">No matching claims found.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="tardis-bg text-white py-6 mt-auto">
+        <div class="text-center text-sm opacity-80">
+            <p>&copy; 2026 Tekphreak. 𝑆𝑡𝑎𝑦 𝑅𝑎𝑡𝑖𝑜𝑛𝑎𝑙.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Data Source
+        const apologeticsData = [
+            {
+                id: 1,
+                claim: "Atheism believes that nothing created everything.",
+                response: "𝐴𝑡ℎ𝑒𝑖𝑠𝑚 literally means ❝without god belief❞ It has nothing to do with 𝑎𝑛𝑦𝑡ℎ𝑖𝑛𝑔 𝑏𝑒𝑖𝑛𝑔 𝑐𝑟𝑒𝑎𝑡𝑒𝑑, Morality, the big bang, or anything else a dishonest theist tries to attach to it."
+            },
+            {
+                id: 2,
+                claim: "If there is no God, objective morality cannot exist.",
+                response: "Morality is a 𝑠𝑜𝑐𝑖𝑎𝑙 𝑐𝑜𝑛𝑠𝑡𝑟𝑢𝑐𝑡 rooted in empathy and well-being. If your only reason for being good is fear of 𝑑𝑖𝑣𝑖𝑛𝑒 𝑝𝑢𝑛𝑖𝑠ℎ𝑚𝑒𝑛𝑡, that isn't morality, that is just obeying orders to save your own skin."
+            },
+            {
+                id: 3,
+                claim: "The Bible is historically accurate because of eyewitness accounts.",
+                response: "The gospels were written 𝑑𝑒𝑐𝑎𝑑𝑒𝑠 after the alleged events by anonymous authors who were 𝑛𝑜𝑡 eyewitnesses. Hearsay recorded 40-70 years later in a different language does not constitute ❝historical proof❞."
+            },
+            {
+                id: 4,
+                claim: "Pascal's Wager: You have nothing to lose by believing.",
+                response: "You lose 𝑖𝑛𝑡𝑒𝑙𝑙𝑒𝑐𝑡𝑢𝑎𝑙 ℎ𝑜𝑛𝑒𝑠𝑡𝑦. Also, which God? If you pick the wrong one, you might make the real God angrier than if you stayed neutral. An omniscient being would see through a 𝑓𝑎𝑘𝑒 𝑏𝑒𝑙𝑖𝑒𝑓 aimed at gambling for heaven."
+            },
+            {
+                id: 5,
+                claim: "Evolution is just a theory.",
+                response: "This is an 𝑒𝑞𝑢𝑖𝑣𝑜𝑐𝑎𝑡𝑖𝑜𝑛 𝑓𝑎𝑙𝑙𝑎𝑐𝑦. In science, a theory is the highest level of explanation, backed by evidence. It doesn't mean ❝guess❞ like it does in casual talk. Gravity is also a theory, but you don't float away."
+            },
+            {
+                id: 6,
+                claim: "You just want to sin / You are angry at God.",
+                response: "This is an 𝑎𝑑 ℎ𝑜𝑚𝑖𝑛𝑒𝑚 attack. I cannot be angry at something I don't believe exists, just like you aren't angry at Zeus. My lack of belief is due to lack of 𝑒𝑣𝑖𝑑𝑒𝑛𝑐𝑒, not a desire to break your rules."
+            },
+            {
+                id: 7,
+                claim: "Look at the trees/sunset! How can you deny a creator?",
+                response: "This is the 𝐴𝑟𝑔𝑢𝑚𝑒𝑛𝑡 𝑓𝑟𝑜𝑚 𝐼𝑛𝑐𝑟𝑒𝑑𝑢𝑙𝑖𝑡𝑦. Just because nature is beautiful or complex doesn't prove a deity made it. Evolution and natural laws explain complexity without needing magic."
+            },
+            {
+                id: 8,
+                claim: "If we came from monkeys, why are there still monkeys?",
+                response: "We didn't come from modern monkeys; we share a 𝑐𝑜𝑚𝑚𝑜𝑛 𝑎𝑛𝑐𝑒𝑠𝑡𝑜𝑟 with them. That is like asking, ❝If I came from my cousin, why is my cousin still here?❞ It shows a total misunderstanding of evolution."
+            }
+        ];
+
+        const listContainer = document.getElementById('apologeticsList');
+        const searchInput = document.getElementById('searchInput');
+        const noResults = document.getElementById('noResults');
+        const resultsCount = document.getElementById('results-count');
+
+        // Function to copy text to clipboard
+        function copyText(text) {
+            // Create temporary textarea to copy from (better mobile compatibility than navigator.clipboard in some contexts)
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            
+            // Simple visual feedback could go here, but keeping it simple for now
+        }
+
+        // Render function
+        function renderList(items) {
+            listContainer.innerHTML = '';
+            
+            if (items.length === 0) {
+                noResults.classList.remove('hidden');
+                resultsCount.innerText = '';
+                return;
+            } else {
+                noResults.classList.add('hidden');
+                resultsCount.innerText = `Showing ${items.length} claim${items.length !== 1 ? 's' : ''}`;
+            }
+
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 transition-all hover:shadow-lg";
+                
+                card.innerHTML = `
+                    <div class="p-5">
+                        <div class="mb-4">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">
+                                <i class="fa-solid fa-cross text-red-800 mr-1"></i> Christian Claim
+                            </label>
+                            <div class="bg-red-50 p-3 rounded-lg border border-red-100 text-gray-800 font-medium text-sm md:text-base">
+                                ❝${item.claim}❞
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-500">
+                                    <i class="fa-solid fa-brain text-blue-800 mr-1"></i> Atheist Response
+                                </label>
+                                <button onclick="copyText(this.getAttribute('data-text'))" data-text="${item.response.replace(/"/g, '&quot;')}" class="text-xs text-blue-600 hover:text-blue-800 font-semibold focus:outline-none">
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <textarea readonly class="w-full bg-blue-50 p-3 rounded-lg border border-blue-100 text-gray-800 text-sm md:text-base resize-none focus:outline-none custom-scroll h-32 md:h-28 leading-relaxed">${item.response}</textarea>
+                        </div>
+                    </div>
+                `;
+                listContainer.appendChild(card);
+            });
+        }
+
+        // Search logic
+        function filterItems(query) {
+            const lowerQuery = query.toLowerCase();
+            const filtered = apologeticsData.filter(item => 
+                item.claim.toLowerCase().includes(lowerQuery) || 
+                item.response.toLowerCase().includes(lowerQuery)
+            );
+            renderList(filtered);
+        }
+
+        // Event Listeners
+        searchInput.addEventListener('input', (e) => {
+            filterItems(e.target.value);
+        });
+
+        // Initial Render
+        renderList(apologeticsData);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — tekphreak</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .error-code {
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      font-family: 'Courier New', monospace;
+    }
+    .error-msg {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card" style="text-align: center;">
+      <div class="error-code">404</div>
+      <p class="error-msg">Page not found. That path doesn't exist.</p>
+      <a class="link-btn" href="/" style="justify-content: center;">&#x2190; Back home</a>
+    </div>
+  </main>
+  <footer>&copy; <span id="yr"></span> tekphreak</footer>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tekphreakdotcom",
+  "compatibility_date": "2026-04-10",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": ".",
+    "exclude": [
+      ".git/**",
+      ".wrangler/**",
+      "node_modules/**",
+      "wrangler.jsonc"
+    ]
+  },
+  "workers_dev": false,
+  "preview_urls": true
+}

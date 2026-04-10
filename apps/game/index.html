@@ -1055,6 +1055,7 @@
         function createExplosion(x, y, count, color) {
             sfx.explosion();
             for (let i = 0; i < count; i++) {
+                if (particles.length >= 150) break;
                 particles.push({
                     x: x,
                     y: y,
@@ -1398,7 +1399,7 @@
                 if (nearest) {
                     player.beamTarget = nearest;
                     nearest.hp -= 200 * dt; 
-                    if (Math.random() < 0.5) {
+                    if (Math.random() < 0.5 && particles.length < 150) {
                         particles.push({ x: nearest.x + random(-10, 10), y: nearest.y + random(-10, 10), vx: random(-50, 50), vy: random(-50, 50), life: 0.2, color: '#0ff' });
                     }
                     if (nearest.hp <= 0) {
@@ -1561,7 +1562,7 @@
 
             const stageDiff = 1 + ((currentStage - 1) * 0.2); 
             
-            if (Math.random() < 1.5 * dt * stageDiff && !gameFinished) spawnAsteroid(); 
+            if (Math.random() < 1.5 * dt * stageDiff && !gameFinished && asteroids.length < 25) spawnAsteroid();
             
             for (let i = 0; i < asteroids.length; i++) {
                 const a = asteroids[i];

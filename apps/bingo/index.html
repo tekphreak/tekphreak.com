@@ -38,10 +38,8 @@
         .bingo-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 2px;
-            padding: 2px; /* outer "border" matches gap width on all sides */
-            background-color: currentColor; /* The Grid Lines Color */
-            overflow: hidden;
+            border-top: 2px solid currentColor;
+            border-left: 2px solid currentColor;
         }
         .bingo-cell {
             aspect-ratio: 1/1;
@@ -52,6 +50,8 @@
             padding: 2px;
             word-break: break-word;
             line-height: 1.1;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
         }
     </style>
 </head>

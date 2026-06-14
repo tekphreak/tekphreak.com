@@ -5,14 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="tekphreak — personal site and projects">
   <title>tekphreak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
-  <div class="card">
-    <div class="avatar">&#x1F4BB;</div>
-    <h1>tekphreak</h1>
-    <p class="handle">whoami</p>
+  <header>
+    <div class="identity">
+      <div class="avatar">&#x1F4BB;</div>
+      <div>
+        <h1>tekphreak</h1>
+        <p class="handle">whoami</p>
+      </div>
+    </div>
     <p class="bio">Builder. Tinkerer. I make things on the internet.</p>
     <div class="links">
       <a class="link-btn" href="https://github.com/tekphreak" target="_blank" rel="noopener">
@@ -22,46 +29,62 @@
         &#x2709;&#xFE0F; Email
       </a>
     </div>
+  </header>
+
+  <section>
     <p class="section-title">Firefox Extensions</p>
     <div class="ext-grid">
       <a class="ext-card" href="https://addons.mozilla.org/en-US/firefox/addon/tekphreak-fb-audio-downloader/" target="_blank" rel="noopener">
-        <img src="https://addons.mozilla.org/user-media/addon_icons/2988/2988173-64.png?modified=b7dd56ff" alt="FB Audio Downloader icon" width="36" height="36">
+        <img src="https://addons.mozilla.org/user-media/addon_icons/2988/2988173-64.png?modified=b7dd56ff" alt="" width="32" height="32">
         <span class="ext-name">FB Audio Downloader</span>
         <span class="ext-desc">Download audio messages from Facebook Messenger</span>
       </a>
       <a class="ext-card" href="https://addons.mozilla.org/en-US/firefox/addon/right-click-theimg-to-download/" target="_blank" rel="noopener">
-        <img src="https://addons.mozilla.org/user-media/addon_icons/2958/2958162-64.png?modified=14200327" alt="Right Click Img To Download icon" width="36" height="36">
+        <img src="https://addons.mozilla.org/user-media/addon_icons/2958/2958162-64.png?modified=14200327" alt="" width="32" height="32">
         <span class="ext-name">Right Click Img To Download</span>
         <span class="ext-desc">Download images with timestamped filenames</span>
       </a>
       <a class="ext-card" href="https://addons.mozilla.org/en-US/firefox/addon/vet-threads-instagram/" target="_blank" rel="noopener">
-        <img src="https://addons.mozilla.org/user-media/addon_icons/2945/2945985-64.png?modified=d65bb64a" alt="Vet Threads Instagram icon" width="36" height="36">
+        <img src="https://addons.mozilla.org/user-media/addon_icons/2945/2945985-64.png?modified=d65bb64a" alt="" width="32" height="32">
         <span class="ext-name">Vet Threads Instagram</span>
         <span class="ext-desc">Right-click any Threads profile to open their Instagram</span>
       </a>
       <a class="ext-card" href="https://addons.mozilla.org/en-US/firefox/user/18838772/" target="_blank" rel="noopener">
-        <img src="/assets/thread-styler-icon.png" alt="TekPhreak Thread Styler icon" width="36" height="36">
+        <img src="/assets/thread-styler-icon.png" alt="" width="32" height="32">
         <span class="ext-name">TekPhreak Thread Styler</span>
         <span class="ext-desc">Style Threads posts with Unicode — mono, italic, small caps &amp; more</span>
       </a>
     </div>
+  </section>
+
+  <section>
     <p class="section-title">Projects</p>
-    <div class="projects">
-      <a class="project-item" target="_blank" rel="noopener" href="/apps/game/">
-        Asteroid Killer <span class="arrow">&#x2192;</span>
+    <div class="item-grid">
+      <a class="grid-item" target="_blank" rel="noopener" href="/apps/game/">
+        <span class="item-name">Asteroid Killer</span>
+        <span class="item-desc">Browser-based arcade shooter</span>
+        <span class="arrow">&#x2192;</span>
       </a>
     </div>
-    <p class="section-title">Threads Toys</p>
-    <div class="projects">
-      <a class="project-item" target="_blank" rel="noopener" href="/apps/threadsaver/">
-        ThreadSaver <span class="arrow">&#x2192;</span>
+  </section>
+
+  <section>
+    <p class="section-title">Threads Web Toys</p>
+    <div class="item-grid">
+      <a class="grid-item" target="_blank" rel="noopener" href="/apps/threadsaver/">
+        <span class="item-name">ThreadSaver</span>
+        <span class="item-desc">Create and download custom Threads post screenshots</span>
+        <span class="arrow">&#x2192;</span>
       </a>
-      <a class="project-item" target="_blank" rel="noopener" href="/apps/threadstyler/">
-        Threads Styler <span class="arrow">&#x2192;</span>
+      <a class="grid-item" target="_blank" rel="noopener" href="/apps/threadstyler/">
+        <span class="item-name">Threads Styler</span>
+        <span class="item-desc">Style text with Unicode character sets for Threads posts</span>
+        <span class="arrow">&#x2192;</span>
       </a>
     </div>
-  </div>
+  </section>
 </main>
+
 <footer>
   &copy; <span id="yr"></span> tekphreak
 </footer>

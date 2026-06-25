@@ -3,91 +3,388 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="tekphreak — personal site and projects">
-  <title>tekphreak</title>
+
+  <title>Michael Hogan | tekphreak &mdash; Technical Support, Security &amp; Software Development | Atlanta, GA</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Michael Hogan &mdash; tekphreak | Technical Support, Security Operations &amp; Software Development professional based in Atlanta, GA. Open to new opportunities.">
+  <meta name="keywords" content="Michael Hogan, tekphreak, technical support specialist, security officer, software developer, Atlanta, IT professional, hire, resume">
+  <meta name="author" content="Michael Hogan">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tekphreak.com/">
+  <meta property="og:title" content="Michael Hogan | tekphreak &mdash; Professional Portfolio">
+  <meta property="og:description" content="Technical Support, Security Operations &amp; Software Development professional based in Atlanta, GA. Open to new opportunities.">
+  <meta property="og:image" content="https://tekphreak.com/assets/profile.jpg">
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Michael Hogan | tekphreak">
+  <meta name="twitter:description" content="Technical Support, Security &amp; Software Development professional. Open to new opportunities.">
+  <meta name="twitter:image" content="https://tekphreak.com/assets/profile.jpg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://tekphreak.com/">
+
+  <!-- Favicon — drop files into assets/ and favicon.ico into root -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#8B5E3C">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="print.css" media="print">
 </head>
 <body>
-<main>
-  <header>
-    <div class="identity">
-      <div class="avatar">&#x1F4BB;</div>
-      <div>
-        <h1>tekphreak</h1>
-        <p class="handle">whoami</p>
+
+  <!-- ===== NAV ===== -->
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">tekphreak</a>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1 class="hero-name">Michael Hogan</h1>
+        <div class="hero-tagline-block">
+          <p class="hero-tagline">Technical Support &middot; Security Operations &middot; Software Development</p>
+        </div>
+        <div class="open-to-work-badge">
+          <span class="badge-dot"></span> Open to Opportunities
+        </div>
+        <div class="hero-ctas">
+          <a href="assets/resume.pdf" download class="btn btn-primary">Download Resume</a>
+          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/profile.jpg" alt="Photo coming soon" class="profile-img">
       </div>
     </div>
-    <p class="bio">Builder. Tinkerer. I make things on the internet.</p>
-    <div class="links">
-      <a class="link-btn" href="https://github.com/tekphreak" target="_blank" rel="noopener">
-        &#x1F4E6; GitHub
-      </a>
-      <a class="link-btn" href="mailto:tek@sdf.org">
-        &#x2709;&#xFE0F; Email
-      </a>
-    </div>
-  </header>
+  </section>
 
-  <section>
-    <p class="section-title">Firefox Extensions</p>
-    <div class="ext-grid">
-      <a class="ext-card" href="https://addons.mozilla.org/en-US/firefox/addon/tekphreak-fb-audio-downloader/" target="_blank" rel="noopener">
-        <img src="https://addons.mozilla.org/user-media/addon_icons/2988/2988173-64.png?modified=b7dd56ff" alt="" width="32" height="32">
-        <span class="ext-name">FB Audio Downloader</span>
-        <span class="ext-desc">Download audio messages from Facebook Messenger</span>
-      </a>
-      <a class="ext-card" href="https://addons.mozilla.org/en-US/firefox/addon/right-click-theimg-to-download/" target="_blank" rel="noopener">
-        <img src="https://addons.mozilla.org/user-media/addon_icons/2958/2958162-64.png?modified=14200327" alt="" width="32" height="32">
-        <span class="ext-name">Right Click Img To Download</span>
-        <span class="ext-desc">Download images with timestamped filenames</span>
-      </a>
-      <a class="ext-card" href="https://addons.mozilla.org/en-US/firefox/addon/vet-threads-instagram/" target="_blank" rel="noopener">
-        <img src="https://addons.mozilla.org/user-media/addon_icons/2945/2945985-64.png?modified=d65bb64a" alt="" width="32" height="32">
-        <span class="ext-name">Vet Threads Instagram</span>
-        <span class="ext-desc">Right-click any Threads profile to open their Instagram</span>
-      </a>
-      <a class="ext-card" href="https://addons.mozilla.org/en-US/firefox/user/18838772/" target="_blank" rel="noopener">
-        <img src="/assets/thread-styler-icon.png" alt="" width="32" height="32">
-        <span class="ext-name">TekPhreak Thread Styler</span>
-        <span class="ext-desc">Style Threads posts with Unicode — mono, italic, small caps &amp; more</span>
-      </a>
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="section-inner">
+      <h2 class="section-heading">About Me</h2>
+      <div class="about-grid">
+        <div class="about-bio">
+          <p>Michael Hogan &mdash; known professionally as <strong>tekphreak</strong> &mdash; is a Technical Support and Customer Service leader based in Atlanta, GA, with 15+ years of experience managing support teams, resolving complex technical issues, and building the processes that keep operations running smoothly. His background spans technical support, software engineering, security operations, and UX development across industries including payments, telecommunications, and enterprise IT. A U.S. Army veteran with Signal Corps training, Michael brings discipline, technical depth, and clear communication to every role.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Years of Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Industries</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">6+</span>
+            <span class="stat-label">Roles Held</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <p class="section-title">Projects</p>
-    <div class="item-grid">
-      <a class="grid-item" target="_blank" rel="noopener" href="/apps/game/">
-        <span class="item-name">Asteroid Killer</span>
-        <span class="item-desc">Browser-based arcade shooter</span>
-        <span class="arrow">&#x2192;</span>
-      </a>
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <div class="section-inner">
+      <h2 class="section-heading">Skills</h2>
+      <div class="skills-groups">
+
+        <div class="skill-group">
+          <h3 class="skill-group-label">Technical Support &amp; IT</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Help Desk / Tier 1&ndash;3</span>
+            <span class="skill-tag">Ticketing Systems</span>
+            <span class="skill-tag">SLA Compliance</span>
+            <span class="skill-tag">First-Contact Resolution</span>
+            <span class="skill-tag">Root Cause Analysis</span>
+            <span class="skill-tag">Escalation Management</span>
+            <span class="skill-tag">Knowledge Base Documentation</span>
+            <span class="skill-tag">Remote Support</span>
+            <span class="skill-tag">CRM Systems</span>
+            <span class="skill-tag">Onboarding &amp; Training</span>
+            <span class="skill-tag">Process Improvement</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-label">Security Operations</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Incident Management &amp; Resolution</span>
+            <span class="skill-tag">Physical Security</span>
+            <span class="skill-tag">Access Control</span>
+            <span class="skill-tag">Shift &amp; Incident Documentation</span>
+            <span class="skill-tag">De-escalation</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-label">Software &amp; App Development</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">HTML / CSS / JavaScript</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">API Testing</span>
+            <span class="skill-tag">PCI DSS Compliance</span>
+            <span class="skill-tag">eCommerce / Payment Gateways</span>
+            <span class="skill-tag">UX / Checkout Flow Optimization</span>
+            <span class="skill-tag">Browser Extensions (Firefox)</span>
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">Cloudflare Workers</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-label">Communication &amp; Customer Service</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Technical Writing</span>
+            <span class="skill-tag">Customer Training</span>
+            <span class="skill-tag">Cross-functional Collaboration</span>
+            <span class="skill-tag">Stakeholder Reporting</span>
+            <span class="skill-tag">Documentation</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-label">Military / Signal Corps</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Signal Corps (U.S. Army)</span>
+            <span class="skill-tag">Communications Systems</span>
+            <span class="skill-tag">Mission-Critical Operations</span>
+            <span class="skill-tag">Team Leadership</span>
+            <span class="skill-tag">Performance Under Pressure</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <section>
-    <p class="section-title">Threads Web Toys</p>
-    <div class="item-grid">
-      <a class="grid-item" target="_blank" rel="noopener" href="/apps/threadsaver/">
-        <span class="item-name">ThreadSaver</span>
-        <span class="item-desc">Create and download custom Threads post screenshots</span>
-        <span class="arrow">&#x2192;</span>
-      </a>
-      <a class="grid-item" target="_blank" rel="noopener" href="/apps/threadstyler/">
-        <span class="item-name">Threads Styler</span>
-        <span class="item-desc">Style text with Unicode character sets for Threads posts</span>
-        <span class="arrow">&#x2192;</span>
-      </a>
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="section-inner">
+      <h2 class="section-heading">Experience</h2>
+      <div class="timeline">
+
+        <div class="timeline-entry">
+          <span class="timeline-date">2025 &ndash; Present</span>
+          <h3 class="timeline-role">Security Officer</h3>
+          <p class="timeline-company">PSI Security &mdash; Atlanta, GA</p>
+          <ul class="timeline-bullets">
+            <li>Provided front-line customer support in a high-traffic hotel environment, assisting guests and staff while maintaining a calm, professional presence during time-sensitive situations.</li>
+            <li>Maintained detailed incident reports and shift documentation, demonstrating accuracy, attention to detail, and clear written communication.</li>
+            <li>Utilized technology systems for reporting, monitoring, and communication, adapting quickly to new tools and procedures.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-entry">
+          <span class="timeline-date">2017 &ndash; 2024</span>
+          <h3 class="timeline-role">Technical Support Specialist</h3>
+          <p class="timeline-company">Alorica (Verizon) &mdash; Atlanta, GA</p>
+          <ul class="timeline-bullets">
+            <li>Handled 40&ndash;50 inbound technical and billing support contacts daily for Verizon customers, consistently meeting SLA targets and quality assurance benchmarks in a high-volume call center environment.</li>
+            <li>Designed and delivered onboarding training for new hires covering systems navigation, call procedures, and troubleshooting workflows &mdash; reducing ramp-up time by 20%.</li>
+            <li>Documented recurring technical issues in the team knowledge base, reducing repeat escalations and improving team response efficiency.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-entry">
+          <span class="timeline-date">2008 &ndash; 2017</span>
+          <h3 class="timeline-role">Software Engineer / Client Support Liaison</h3>
+          <p class="timeline-company">CreSecure &mdash; Atlanta, GA</p>
+          <ul class="timeline-bullets">
+            <li>Designed, built, and maintained a PCI DSS&ndash;compliant payment gateway supporting one-time and recurring transactions for enterprise clients, ensuring system reliability and zero-downtime uptime targets.</li>
+            <li>Built a multi-stage API testing platform to validate mission-critical payment products, improving release quality and reducing production defect rates.</li>
+            <li>Served as primary technical point of contact for 10+ enterprise clients, diagnosing integration issues and producing comprehensive technical documentation for internal and external teams.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-entry">
+          <span class="timeline-date">2013 &ndash; 2016</span>
+          <h3 class="timeline-role">UX Developer / Technical Support</h3>
+          <p class="timeline-company">Acculynk &mdash; Atlanta, GA <em style="font-style:italic;font-weight:400;">(concurrent with CreSecure)</em></p>
+          <ul class="timeline-bullets">
+            <li>Collaborated with software development teams to implement and test eCommerce payment tools for client websites, directly applying payment gateway expertise from CreSecure.</li>
+            <li>Optimized checkout flows and payment UI screens, reducing user friction and improving end-to-end transaction completion rates.</li>
+            <li>Delivered weekly project status updates and milestone reports to stakeholders, ensuring on-time delivery and transparent communication.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-entry">
+          <span class="timeline-date">1996 &ndash; 2000</span>
+          <h3 class="timeline-role">Technical Support Representative</h3>
+          <p class="timeline-company">Computer Generated Solutions (CGS) &mdash; Remote</p>
+          <ul class="timeline-bullets">
+            <li>Delivered VIP-level technical support for IBM and Ford Motor Company executive users, handling hardware, software, and connectivity issues with a high standard of professionalism and speed.</li>
+            <li>Maintained detailed support logs and knowledge base articles contributing to team-wide resolution efficiency.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-entry">
+          <span class="timeline-date">1990 &ndash; 1993</span>
+          <h3 class="timeline-role">Communications Specialist &mdash; Signal Corps</h3>
+          <p class="timeline-company">United States Army</p>
+          <ul class="timeline-bullets">
+            <li>Operated and maintained communications systems in support of mission-critical operations, ensuring reliable signal transmission in high-pressure environments.</li>
+            <li>Developed discipline, teamwork, and the ability to perform under pressure &mdash; values that have defined a career in fast-paced support and service environments.</li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </section>
-</main>
 
-<footer>
-  &copy; <span id="yr"></span> tekphreak
-</footer>
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="section-inner">
+      <h2 class="section-heading">Projects</h2>
+      <div class="card-grid">
+
+        <div class="card">
+          <h3 class="card-title">Asteroid Killer</h3>
+          <p class="card-desc">Canvas-based arcade shooter with 10 stages, Web Audio API sound design, and localStorage high scores. Built in vanilla JS.</p>
+          <div class="card-tags">
+            <span class="skill-tag">HTML5 Canvas</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Web Audio API</span>
+          </div>
+          <a href="apps/game/index.html" class="btn btn-outline card-btn">View Project</a>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">ThreadSaver</h3>
+          <p class="card-desc">Live Threads post composer and screenshot tool &mdash; write, style, and export social media posts as images, all in the browser.</p>
+          <div class="card-tags">
+            <span class="skill-tag">React (CDN)</span>
+            <span class="skill-tag">html2canvas</span>
+            <span class="skill-tag">Tailwind CSS</span>
+          </div>
+          <a href="apps/threadsaver/index.html" class="btn btn-outline card-btn">View Project</a>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Threads Styler</h3>
+          <p class="card-desc">Unicode character-map transformer for Threads posts &mdash; apply bold, italic, and decorative text styles instantly.</p>
+          <div class="card-tags">
+            <span class="skill-tag">Vanilla JS</span>
+            <span class="skill-tag">Unicode</span>
+            <span class="skill-tag">Tailwind CSS</span>
+          </div>
+          <a href="apps/threadstyler/index.html" class="btn btn-outline card-btn">View Project</a>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Apologetics Bingo</h3>
+          <p class="card-desc">Interactive 5&times;5 bingo card for tracking logical fallacies in debates. Shuffle, mark, and export your card.</p>
+          <div class="card-tags">
+            <span class="skill-tag">React (CDN)</span>
+            <span class="skill-tag">html2canvas</span>
+            <span class="skill-tag">Tailwind CSS</span>
+          </div>
+          <a href="apps/bingo/index.html" class="btn btn-outline card-btn">View Project</a>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Counter Apologetics</h3>
+          <p class="card-desc">Searchable reference tool for responding to common claims &mdash; structured Q&amp;A with instant filtering.</p>
+          <div class="card-tags">
+            <span class="skill-tag">Vanilla JS</span>
+            <span class="skill-tag">Tailwind CSS</span>
+          </div>
+          <a href="apps/cat/index.html" class="btn btn-outline card-btn">View Project</a>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Firefox Extensions</h3>
+          <p class="card-desc">A collection of browser extensions: audio downloader for Facebook Messenger, timestamped image saver, Instagram profile linker, and Unicode text styler for Threads.</p>
+          <div class="card-tags">
+            <span class="skill-tag">Firefox WebExtensions</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+          <a href="https://addons.mozilla.org/en-US/firefox/user/18838772/" target="_blank" rel="noopener noreferrer" class="btn btn-outline card-btn">View on AMO</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="section-inner section-inner--centered">
+      <h2 class="section-heading">Let&rsquo;s Connect</h2>
+      <p class="contact-invite">Recruiters and hiring managers &mdash; I&rsquo;m actively exploring new opportunities in IT support, security, and software development. Reach out and let&rsquo;s talk.</p>
+      <div class="contact-links">
+        <a href="mailto:michaelrhogan@gmail.com" class="btn btn-primary contact-btn">
+          &#x2709; Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/michael-r-hogan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary contact-btn">
+          LinkedIn
+        </a>
+        <a href="https://github.com/tekphreak" target="_blank" rel="noopener noreferrer" class="btn btn-outline contact-btn">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>Michael Hogan &middot; <span id="footer-year"></span> &middot; Built with care.</p>
+  </footer>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Michael Hogan",
+    "alternateName": "tekphreak",
+    "url": "https://tekphreak.com",
+    "image": "https://tekphreak.com/assets/profile.jpg",
+    "jobTitle": "Technical Support Specialist",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Atlanta",
+      "addressRegion": "GA",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/michael-r-hogan",
+      "https://github.com/tekphreak"
+    ]
+  }
+  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>

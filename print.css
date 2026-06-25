@@ -1,0 +1,95 @@
+/* =============================================
+   print.css — Clean black & white, ink-saving
+   ============================================= */
+
+@media print {
+
+  @page {
+    margin: 1.5cm 2cm;
+    size: A4 portrait;
+  }
+
+  * {
+    color: #000 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-color: #ccc !important;
+  }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3 {
+    font-family: Georgia, serif;
+    page-break-after: avoid;
+  }
+
+  nav,
+  .btn,
+  #contact a[href^="mailto"],
+  footer,
+  .hamburger,
+  .open-to-work-badge {
+    display: none !important;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555 !important;
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript"]::after {
+    content: "";
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  #experience .timeline-entry {
+    border-left: 2px solid #999 !important;
+    padding-left: 1em;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  #projects .card-grid {
+    display: block !important;
+  }
+
+  #projects .card {
+    border: 1px solid #ccc !important;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  .skill-tag {
+    border: 1px solid #999 !important;
+    padding: 0.1em 0.4em;
+    margin: 0.1em;
+    display: inline-block;
+    font-size: 9pt;
+  }
+
+  #hero {
+    min-height: unset !important;
+    padding: 1em 0 !important;
+  }
+
+  #hero img {
+    max-width: 80px !important;
+    float: right;
+  }
+
+  #certifications .cert-grid {
+    display: block !important;
+    columns: 2;
+  }
+}

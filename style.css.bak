@@ -1,0 +1,262 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:           #0d1117;
+  --surface:      #161b22;
+  --border:       rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  --text:         #e6edf3;
+  --muted:        #8b949e;
+  --accent:       #58a6ff;
+  --accent-hover: #79c0ff;
+  --green:        #3fb950;
+  --font-sans:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 3rem;
+  width: 100%;
+}
+
+/* ── Header / Identity ───────────────────────────────────── */
+
+header {
+  margin-bottom: 3rem;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+h1 {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.handle {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--green);
+  margin-top: 0.2rem;
+}
+
+.handle::before {
+  content: '~$ ';
+  opacity: 0.5;
+}
+
+.bio {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.8rem;
+  min-height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.825rem;
+  font-weight: 500;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.link-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text);
+}
+
+/* ── Sections ────────────────────────────────────────────── */
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 0.65rem;
+}
+
+/* ── Extension Grid ──────────────────────────────────────── */
+/* Gap-based border trick: grid background = border colour,  */
+/* gap = 1px, each cell fills with --bg to show clean lines. */
+
+.ext-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ext-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem;
+  background: var(--bg);
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.15s;
+}
+
+.ext-card:hover {
+  background: var(--surface);
+}
+
+.ext-card img {
+  border-radius: 6px;
+  margin-bottom: 0.2rem;
+}
+
+.ext-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ext-desc {
+  font-size: 0.775rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ── Item Grid (Projects / Threads Web Toys) ─────────────── */
+
+.item-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 2.5rem 1rem 1rem;
+  background: var(--bg);
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  transition: background 0.15s;
+}
+
+.grid-item:hover {
+  background: var(--surface);
+}
+
+.item-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.item-desc {
+  font-size: 0.775rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.grid-item .arrow {
+  position: absolute;
+  top: 1rem;
+  right: 0.9rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  transition: transform 0.15s, color 0.15s;
+}
+
+.grid-item:hover .arrow {
+  transform: translate(2px, -2px);
+  color: var(--accent);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+
+footer {
+  padding: 1.25rem 1.5rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  border-top: 1px solid var(--border);
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 520px) {
+  main {
+    padding: 2.5rem 1.25rem 2rem;
+  }
+
+  .ext-grid,
+  .item-grid {
+    grid-template-columns: 1fr;
+  }
+}

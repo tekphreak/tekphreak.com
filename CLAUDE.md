@@ -581,6 +581,18 @@ Link `print.css` in `<head>` — it loads only when printing or saving as PDF:
 
 ## Build Progress
 
+### Updated — 2026-06-27
+
+**Changes:**
+
+| Change | Notes |
+|---|---|
+| Red Tape project card | Replaced "Coming Soon" button with "View on GitHub" → `https://github.com/tekphreak/red-tape` |
+| `README.md` | Created for `tekphreak/tekphreak.com` repo |
+| `red-tape` repo `README.md` | Created and pushed directly to `tekphreak/red-tape` |
+
+---
+
 ### Completed — 2026-06-25
 
 **Files created / replaced:**

@@ -590,6 +590,7 @@ Link `print.css` in `<head>` — it loads only when printing or saving as PDF:
 | Red Tape project card | Replaced "Coming Soon" button with "View on GitHub" → `https://github.com/tekphreak/red-tape` |
 | `README.md` | Created for `tekphreak/tekphreak.com` repo |
 | `red-tape` repo `README.md` | Created and pushed directly to `tekphreak/red-tape` |
+| Counter Apologetics project card | Removed from Projects section; `apps/cat/` files untouched |
 
 ---
 

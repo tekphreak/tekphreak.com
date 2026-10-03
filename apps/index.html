@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apps — tekphreak</title>
+  <meta name="description" content="Small tools and projects by tekphreak that run right in your browser: ThreadSaver, Threads Styler and Asteroid Killer.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#8B5E3C">
+  <link rel="canonical" href="https://tekphreak.com/apps/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-ink:          #1C1C1E;
+      --color-surface:      #FAF7F2;
+      --color-card:         #FFFFFF;
+      --color-accent:       #8B5E3C;
+      --color-accent-light: #F0E6DA;
+      --color-muted:        #6B6B6B;
+      --color-border:       #E2D9CE;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--color-surface);
+      color: var(--color-ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.75;
+    }
+
+    a { color: var(--color-accent); }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px 24px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-ink);
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 24px 80px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 4px;
+    }
+
+    .lede {
+      color: var(--color-muted);
+      font-size: 1.05rem;
+      margin: 0 0 40px;
+      max-width: 640px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-accent);
+      border-radius: 12px;
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin: 0 0 6px;
+    }
+
+    .card-desc {
+      margin: 0 0 14px;
+      color: var(--color-ink);
+      font-size: 0.97rem;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      background: var(--color-accent-light);
+      color: var(--color-accent);
+      border-radius: 999px;
+      padding: 3px 12px;
+      font-weight: 600;
+      font-size: 0.78rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      align-self: flex-start;
+      display: inline-block;
+      padding: 8px 20px;
+      border: 1.5px solid var(--color-accent);
+      border-radius: 8px;
+      color: var(--color-accent);
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 40px;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px;
+      color: var(--color-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--color-border);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">tekphreak</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Apps</h1>
+    <p class="lede">Small tools and projects I've built. They run right in your browser — nothing to install.</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <h2 class="card-title">ThreadSaver</h2>
+        <p class="card-desc">Live Threads post composer and screenshot tool &mdash; write, style, and export social media posts as images, all in the browser.</p>
+        <div class="tags">
+          <span class="tag">React (CDN)</span>
+          <span class="tag">html2canvas</span>
+          <span class="tag">Tailwind CSS</span>
+        </div>
+        <a href="/apps/threadsaver/" class="btn">Open ThreadSaver</a>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Threads Styler</h2>
+        <p class="card-desc">Unicode character-map transformer for Threads posts &mdash; apply bold, italic, and decorative text styles instantly.</p>
+        <div class="tags">
+          <span class="tag">Vanilla JS</span>
+          <span class="tag">Unicode</span>
+          <span class="tag">Tailwind CSS</span>
+        </div>
+        <a href="/apps/threadstyler/" class="btn">Open Threads Styler</a>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Asteroid Killer</h2>
+        <p class="card-desc">Canvas-based arcade shooter with 10 stages, Web Audio API sound design, and localStorage high scores. Built in vanilla JS.</p>
+        <div class="tags">
+          <span class="tag">HTML5 Canvas</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Web Audio API</span>
+        </div>
+        <a href="/apps/game/" class="btn">Play Asteroid Killer</a>
+      </div>
+
+    </div>
+
+    <a href="/" class="back">&larr; Back to tekphreak.com</a>
+  </main>
+
+  <footer>
+    tekphreak &middot; <span id="footer-year"></span>
+  </footer>
+
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

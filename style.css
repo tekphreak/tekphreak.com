@@ -4,15 +4,16 @@
 
 /* --- Custom Properties --- */
 :root {
-  --color-ink:          #1C1C1E;
-  --color-surface:      #FAF7F2;
+  --color-ink:          #0A0A0A;
+  --color-surface:      #F5FCFF;
   --color-card:         #FFFFFF;
-  --color-accent:       #8B5E3C;
-  --color-accent-light: #F0E6DA;
-  --color-muted:        #6B6B6B;
-  --color-border:       #E2D9CE;
+  --color-accent:       #1D5FC4;   /* AA-safe text/button blue */
+  --color-brand:        #3080ED;   /* decorative rules, dots, accents */
+  --color-accent-light: #CCF6FF;
+  --color-muted:        #4F5660;
+  --color-border:       #BFE3F0;
 
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'IBM Plex Sans', system-ui, sans-serif;
   --font-body:    'Inter', system-ui, sans-serif;
 
   --nav-height: 64px;
@@ -217,7 +218,7 @@ a:hover {
 }
 
 .hero-tagline-block {
-  border-left: 3px solid var(--color-accent);
+  border-left: 3px solid var(--color-brand);
   padding-left: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -233,7 +234,7 @@ a:hover {
   align-items: center;
   gap: 0.5rem;
   background-color: var(--color-accent-light);
-  border-left: 3px solid var(--color-accent);
+  border-left: 3px solid var(--color-brand);
   color: var(--color-accent);
   font-size: 0.82rem;
   font-weight: 600;
@@ -248,7 +249,7 @@ a:hover {
   display: inline-block;
   width: 8px;
   height: 8px;
-  background-color: var(--color-accent);
+  background-color: var(--color-brand);
   border-radius: 50%;
   flex-shrink: 0;
   animation: badge-pulse 2s infinite;
@@ -306,8 +307,8 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background-color: #6e4a2e;
-  border-color: #6e4a2e;
+  background-color: #164A9C;
+  border-color: #164A9C;
   color: #fff;
 }
 
@@ -364,7 +365,7 @@ a:hover {
 .stat-card {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-accent);
+  border-left: 3px solid var(--color-brand);
   border-radius: 8px;
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -441,7 +442,7 @@ a:hover {
 }
 
 .timeline-entry {
-  border-left: 3px solid var(--color-accent);
+  border-left: 3px solid var(--color-brand);
   padding: 0 0 2.5rem 2rem;
   position: relative;
 }
@@ -457,7 +458,7 @@ a:hover {
   top: 5px;
   width: 10px;
   height: 10px;
-  background-color: var(--color-accent);
+  background-color: var(--color-brand);
   border-radius: 50%;
   border: 2px solid var(--color-card);
 }
@@ -523,7 +524,7 @@ a:hover {
 
 @media (hover: hover) {
   .card:hover {
-    box-shadow: 0 4px 18px rgba(139, 94, 60, 0.12);
+    box-shadow: 0 4px 18px rgba(48, 128, 237, 0.16);
   }
 }
 
@@ -735,7 +736,7 @@ a:hover {
   /* Timeline: swap vertical spine for top border on mobile */
   .timeline-entry {
     border-left: none;
-    border-top: 3px solid var(--color-accent);
+    border-top: 3px solid var(--color-brand);
     padding: 1.25rem 0 2rem;
   }
 

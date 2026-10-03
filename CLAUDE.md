@@ -3,43 +3,46 @@
 ## Project Overview
 
 Redesign the personal homepage at **tekphreak.com** (GitHub Pages, plain HTML/CSS/JS — no frameworks, no build tools).  
-Goal: A warm, professional, recruiter- and headhunter-friendly landing page that positions the owner as a multi-disciplinary professional open to roles across IT/Technical Support, Security, and Software/App Development.
+Goal: A clean, professional, recruiter- and headhunter-friendly landing page that positions the owner as a multi-disciplinary professional open to roles across IT/Technical Support, Security, and Software/App Development.
 
 ---
 
 ## Design Specification
 
-### Palette (Warm & Professional)
+### Palette (Blue, White & Black)
 | Token | Hex | Role |
 |---|---|---|
-| `--color-ink` | `#1C1C1E` | Body text, nav |
-| `--color-surface` | `#FAF7F2` | Page background (warm off-white) |
+| `--color-ink` | `#0A0A0A` | Body text, nav |
+| `--color-surface` | `#F5FCFF` | Page background (very pale cyan tint) |
 | `--color-card` | `#FFFFFF` | Section/card backgrounds |
-| `--color-accent` | `#8B5E3C` | CTA buttons, active states, highlight (warm cognac) |
-| `--color-accent-light` | `#F0E6DA` | Subtle highlight bands, tag backgrounds |
-| `--color-muted` | `#6B6B6B` | Captions, secondary labels |
-| `--color-border` | `#E2D9CE` | Dividers, card borders |
+| `--color-accent` | `#1D5FC4` | Links, CTA buttons, tag text, active states (AA-safe blue) |
+| `--color-brand` | `#3080ED` | Decorative only: left-border rules, timeline spine, badge dot, hover shadow. **Not for text or white-text buttons** (3.9:1 on white fails AA) |
+| `--color-accent-light` | `#CCF6FF` | Subtle highlight bands, tag backgrounds |
+| `--color-muted` | `#4F5660` | Captions, secondary labels |
+| `--color-border` | `#BFE3F0` | Dividers, card borders |
+
+Button hover blue: `#164A9C`. The palette tokens are duplicated in the inline `<style>` of `apps/index.html` and `privacy/index.html` — keep them in sync with `style.css`. `apps/threadsaver`, `apps/threadstyler` and `apps/cat` use `#1D5FC4` directly. `apps/game` and `apps/bingo` keep their own designs.
 
 ### Typography
-- **Display / Hero:** `'Playfair Display', Georgia, serif` — used only for the hero name and section headings. Signals gravitas.
+- **Display / Hero:** `'IBM Plex Sans', system-ui, sans-serif` — engineered, highly readable sans; used only for the logo, hero name and section headings.
 - **Body:** `'Inter', system-ui, sans-serif` — clean and highly legible at all sizes.
 - **Utility / Labels:** `'Inter'` at small caps or uppercase tracking — role tags, section eyebrows.
 - Load both from Google Fonts:
   ```html
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   ```
 
 ### Type Scale
 ```
-Hero name:        clamp(2.6rem, 6vw, 4.2rem), Playfair Display 700
-Section heading:  clamp(1.6rem, 3vw, 2.2rem), Playfair Display 600
+Hero name:        clamp(2.6rem, 6vw, 4.2rem), IBM Plex Sans 700
+Section heading:  clamp(1.6rem, 3vw, 2.2rem), IBM Plex Sans 600
 Subheading:       1.1rem, Inter 600
 Body:             1rem / 1.75, Inter 400
 Caption/label:    0.8rem, Inter 500 uppercase tracking
 ```
 
 ### Signature Element
-A **thin cognac-colored left-border rule** on the hero tagline block — like a professional dossier annotation. This same motif repeats subtly on blockquotes, the "Open to Work" badge, and timeline entries. It's restrained, not decorative — it encodes "this detail was marked for attention."
+A **thin blue (`--color-brand`) left-border rule** on the hero tagline block — like a professional dossier annotation. This same motif repeats subtly on blockquotes, the "Open to Work" badge, and timeline entries. It's restrained, not decorative — it encodes "this detail was marked for attention."
 
 ---
 
@@ -50,18 +53,18 @@ CSS lives in `style.css`. No JavaScript framework. Minimal JS only if needed for
 
 ### Sections (in order)
 
-1. **`<nav>`** — Sticky top nav. Logo: "Michael" in Playfair Display. Right-side links: About, Skills, Experience, Projects, Certifications, Contact. On mobile: hamburger toggle.
+1. **`<nav>`** — Sticky top nav. Logo: "Michael" in IBM Plex Sans. Right-side links: About, Skills, Experience, Projects, Certifications, Contact. On mobile: hamburger toggle.
 
 2. **`#hero`** — Full-viewport-height intro.
-   - Left column: Name (Playfair Display, large), one-line professional tagline, "Open to Opportunities" badge, two CTA buttons: **Download Resume** (primary, accent) + **Contact Me** (secondary, outlined).
-   - Right column: Profile photo placeholder — a clean rounded rectangle with a subtle warm border and alt text "Photo coming soon." The `<img>` tag uses `src="assets/profile.jpg"` so the user can drop in a photo with no code changes.
-   - Hero background: `--color-surface` with a very subtle warm grain texture via CSS (`background-image: url("data:image/svg+xml...")` or a noise overlay).
+   - Left column: Name (IBM Plex Sans, large), one-line professional tagline, "Open to Opportunities" badge, two CTA buttons: **Download Resume** (primary, accent) + **Contact Me** (secondary, outlined).
+   - Right column: Profile photo placeholder — a clean rounded rectangle with a subtle light-blue border and alt text "Photo coming soon." The `<img>` tag uses `src="assets/profile.jpg"` so the user can drop in a photo with no code changes.
+   - Hero background: `--color-surface` with a very subtle grain texture via CSS (`background-image: url("data:image/svg+xml...")` or a noise overlay).
 
 3. **`#about`** — 2-column layout. Left: short professional bio (3–4 sentences). Right: quick-stat cards (Years of Experience, Industries, Roles). Keep all copy placeholder-safe — use `[PLACEHOLDER]` tags for any personal details.
 
 4. **`#skills`** — Tag-cloud style grouped by category: **Technical Support & IT**, **Security Operations**, **Software & App Development**, **Communication & Customer Service**, **Military / Signal Corps**. Tags styled with `--color-accent-light` background and `--color-accent` text.
 
-5. **`#experience`** — Vertical timeline. Each entry: role title, company name, date range, 2–3 bullet responsibilities. Use the cognac left-border rule as the timeline spine. Entries: **[PLACEHOLDER — add your roles here]**.
+5. **`#experience`** — Vertical timeline. Each entry: role title, company name, date range, 2–3 bullet responsibilities. Use the blue left-border rule as the timeline spine. Entries: **[PLACEHOLDER — add your roles here]**.
 
 6. **`#projects`** — 3-column card grid. Each card: project name, short description, tech tags, optional GitHub link button. Cards use `--color-card` with `--color-border` border and a subtle box-shadow on hover.
 
@@ -220,7 +223,7 @@ Mobile visitors — especially recruiters — should land on what feels like a *
 - Test tap targets: iOS requires 44px minimum
 
 **Android Chrome**
-- `theme-color` meta already set to cognac `#8B5E3C` — Chrome will tint the address bar
+- `theme-color` meta set to brand blue `#4169E1` (royal blue) — Chrome will tint the address bar
 - Ensure font sizes never below 16px on inputs to prevent auto-zoom
 - Test with Chrome DevTools device emulation at Galaxy A series resolution (360×800)
 
@@ -238,7 +241,7 @@ Mobile visitors — especially recruiters — should land on what feels like a *
 ## Accessibility
 
 - All images have descriptive `alt` text.
-- Color contrast meets WCAG AA (verified: cognac `#8B5E3C` on `#FAF7F2` passes).
+- Color contrast meets WCAG AA (verified: accent `#1D5FC4` on white ≈6:1 and on `#CCF6FF` ≈5:1 passes).
 - Keyboard-navigable nav with visible `:focus-visible` outlines.
 - `prefers-reduced-motion` respected — no transforms or transitions when active.
 
@@ -392,7 +395,7 @@ Sitemap: https://tekphreak.com/sitemap.xml
 
 ## What NOT to Do
 
-- No dark mode (warm/professional palette is intentional).
+- No dark mode (blue/white/black palette is intentional).
 - No parallax scrolling or heavy animations.
 - No third-party analytics, tracking pixels, or ad scripts.
 - No Lorem Ipsum — use honest placeholder labels like `[Role Title]` or `[Company Name]`.
@@ -415,7 +418,7 @@ The user will supply their own favicon files. Claude Code's job is to wire up al
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#8B5E3C">
+<meta name="theme-color" content="#4169E1">
 ```
 
 ### site.webmanifest
@@ -431,8 +434,8 @@ Create `site.webmanifest` in the repo root:
     { "src": "/assets/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
     { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
   ],
-  "theme_color": "#8B5E3C",
-  "background_color": "#FAF7F2",
+  "theme_color": "#4169E1",
+  "background_color": "#F5FCFF",
   "display": "browser"
 }
 ```
@@ -581,6 +584,12 @@ Link `print.css` in `<head>` — it loads only when printing or saving as PDF:
 
 ## Build Progress
 
+### Updated — 2026-10-03
+
+**Palette change:** cognac/cream → blue (`#3080ED` brand, `#1D5FC4` text/buttons), `#CCF6FF` light accent, white and black. Applied to `style.css`, `apps/index.html`, `privacy/index.html`, `apps/cat`, `apps/threadsaver`, `apps/threadstyler`, `site.webmanifest` and `theme-color` metas. `apps/game` and `apps/bingo` untouched.
+
+---
+
 ### Updated — 2026-06-27
 
 **Changes:**
@@ -601,12 +610,12 @@ Link `print.css` in `<head>` — it loads only when printing or saving as PDF:
 | File | Status | Notes |
 |---|---|---|
 | `index.html` | ✅ Complete | Full redesign per spec, all placeholders filled from resume |
-| `style.css` | ✅ Complete | Warm palette, Playfair Display + Inter, full responsive |
+| `style.css` | ✅ Complete | Blue/white/black palette, IBM Plex Sans + Inter, full responsive |
 | `script.js` | ✅ Created | Mobile nav toggle, hamburger animation, outside-click close, footer year |
 | `print.css` | ✅ Created | Black & white print stylesheet per spec |
 | `robots.txt` | ✅ Created | Allows crawlers, blocks AI training bots |
 | `sitemap.xml` | ✅ Created | Dated 2026-06-25 |
-| `site.webmanifest` | ✅ Created | PWA manifest, cognac theme |
+| `site.webmanifest` | ✅ Created | PWA manifest, blue theme |
 | `assets/resume.pdf` | ✅ Created | Copied from `Michael_Hogan_Resume.pdf` |
 | `index.html.bak` | ✅ Backup | Original dark-theme homepage preserved |
 | `style.css.bak` | ✅ Backup | Original dark stylesheet preserved |

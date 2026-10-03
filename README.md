@@ -13,7 +13,7 @@ Plain HTML, CSS, and vanilla JavaScript. No frameworks, no build tools, no depen
 | File | Purpose |
 |---|---|
 | `index.html` | Single-page site — all sections in one file |
-| `style.css` | Warm-palette design system, fully responsive |
+| `style.css` | Blue, white and black design system, fully responsive |
 | `print.css` | Clean black & white print / PDF stylesheet |
 | `script.js` | Mobile nav toggle only |
 | `assets/` | Profile photo and resume PDF (not checked in) |
